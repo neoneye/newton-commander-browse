@@ -1,28 +1,39 @@
-[31m[!] Unknown arguments: newton-commander-browse, :path =[0m
+#
+# Be sure to run `pod spec lint NAME.podspec' to ensure this is a
+# valid spec and remove all comments before submitting the spec.
+#
+# To learn more about the attributes see http://docs.cocoapods.org/specification.html
+#
+Pod::Spec.new do |s|
+  s.name         = "newton-commander-browse"
+  s.version      = "0.1.0"
+  s.summary      = "Worker process used by Newton Commander for each open panel."
+  s.description  = <<-DESC
+      The child process that runs for each open tab within Newton Commander.
+	  
+	  When you open a tab in the UI then a browse-worker process is started.
+	  
+	  When you kill a tab in the UI then a browse-worker process is killed.
+	  
+	  If a browse-worker process hangs forever then it doesn't affect the parent process (Newton Commander).
+      DESC
+  s.homepage     = "https://github.com/neoneye/newton-commander-browse"
+  s.screenshots  = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.license      = 'MIT'
+  s.author       = { "Simon Strandgaard" => "simon@opcoders.com" }
+  s.source       = { :git => "https://github.com/neoneye/newton-commander-browse.git", :tag => s.version.to_s }
 
-CocoaPods, the Objective-C library package manager.
+  # s.platform     = :ios, '5.0'
+  # s.ios.deployment_target = '5.0'
+  # s.osx.deployment_target = '10.7'
+  s.requires_arc = true
 
-Commands:
+  s.source_files = 'Classes'
+  s.resources = 'Assets'
 
-    * [32mhelp    [0m   Show help for the given command.
-    * [32minit    [0m   Generate a Podfile for the current directory.
-    - [32minstall [0m   Install project dependencies
-    * [32mipc     [0m   Inter-process communication
-    * [32mlib     [0m   Develop pods
-    * [32mlist    [0m   List pods
-    * [32moutdated[0m   Show outdated project dependencies
-    * [32mpush    [0m   Push new specifications to a spec-repo
-    * [32mrepo    [0m   Manage spec-repositories
-    * [32msearch  [0m   Searches for pods
-    * [32msetup   [0m   Setup the CocoaPods environment
-    * [32mspec    [0m   Manage pod specs
-    * [32mtry     [0m   Try a Pod!
-    * [32mupdate  [0m   Update outdated project dependencies
-
-Options:
-
-    --silent     Show nothing
-    --version    Show the version of CocoaPods
-    --no-color   Show output without color
-    --verbose    Show more debugging information
-    --help       Show help banner of specified command
+  s.ios.exclude_files = 'Classes/osx'
+  s.osx.exclude_files = 'Classes/ios'
+  # s.public_header_files = 'Classes/**/*.h'
+  # s.frameworks = 'SomeFramework', 'AnotherFramework'
+  # s.dependency 'JSONKit', '~> 1.4'
+end

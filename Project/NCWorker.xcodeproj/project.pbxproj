@@ -17,13 +17,14 @@
 		4203E0DC186F371A00AB7A50 /* NCWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0D9186F371A00AB7A50 /* NCWorker.m */; };
 		4203E0DD186F371A00AB7A50 /* NCWorkerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4203E0DA186F371A00AB7A50 /* NCWorkerPrivate.h */; };
 		429DC6FA11C534A50028CDEC /* libNCWorkerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC6D511C533940028CDEC /* libNCWorkerLib.a */; };
-		429DC70611C5350F0028CDEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DC6FD11C5350F0028CDEC /* AppDelegate.m */; };
-		429DC70711C5350F0028CDEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 429DC6FF11C5350F0028CDEC /* InfoPlist.strings */; };
-		429DC70811C5350F0028CDEC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429DC70111C5350F0028CDEC /* MainMenu.xib */; };
-		429DC70A11C5350F0028CDEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DC70411C5350F0028CDEC /* main.m */; };
 		429DC71211C535490028CDEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC71111C535490028CDEC /* Cocoa.framework */; };
 		429DC71C11C5359F0028CDEC /* NewtonCommanderHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */; };
 		429DC81911C53FB40028CDEC /* NCWorkerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */; };
+		42D46017186F865600574C87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D46015186F865600574C87 /* AppDelegate.m */; };
+		42D4601F186F867000574C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D46019186F867000574C87 /* InfoPlist.strings */; };
+		42D46020186F867000574C87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D4601B186F867000574C87 /* MainMenu.xib */; };
+		42D46021186F867000574C87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42D4601D186F867000574C87 /* Info.plist */; };
+		42D46022186F867000574C87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4601E186F867000574C87 /* main.m */; };
 		42E0E48511F1245000029764 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E0E48411F1245000029764 /* CoreServices.framework */; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -92,17 +93,17 @@
 		4203E0D8186F371A00AB7A50 /* NCWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorker.h; sourceTree = "<group>"; };
 		4203E0D9186F371A00AB7A50 /* NCWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWorker.m; sourceTree = "<group>"; };
 		4203E0DA186F371A00AB7A50 /* NCWorkerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerPrivate.h; sourceTree = "<group>"; };
-		424CF97911C9863E00CF0019 /* test_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = test_prefix.pch; path = Test/test_prefix.pch; sourceTree = "<group>"; };
 		429DC6D511C533940028CDEC /* libNCWorkerLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNCWorkerLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		429DC6F011C5348F0028CDEC /* NCWorkerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCWorkerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		429DC6FC11C5350F0028CDEC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Test/AppDelegate.h; sourceTree = "<group>"; };
-		429DC6FD11C5350F0028CDEC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Test/AppDelegate.m; sourceTree = "<group>"; };
-		429DC70011C5350F0028CDEC /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
-		429DC70211C5350F0028CDEC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
-		429DC70311C5350F0028CDEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Test/Info.plist; sourceTree = "<group>"; };
-		429DC70411C5350F0028CDEC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Test/main.m; sourceTree = "<group>"; };
 		429DC71111C535490028CDEC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerProtocol.h; sourceTree = "<group>"; };
+		42D46014186F865600574C87 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42D46015186F865600574C87 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42D46016186F865600574C87 /* test_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test_prefix.pch; sourceTree = "<group>"; };
+		42D4601A186F867000574C87 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		42D4601C186F867000574C87 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
+		42D4601D186F867000574C87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D4601E186F867000574C87 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42E0E48411F1245000029764 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NewtonCommanderHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,7 +197,7 @@
 				4264A5BE11BB1E13005468D2 /* Source Protocol */,
 			);
 			name = Classes;
-			path = Classes/osx;
+			path = ../Classes/osx;
 			sourceTree = "<group>";
 		};
 		4264A5BE11BB1E13005468D2 /* Source Protocol */ = {
@@ -222,24 +223,24 @@
 		429DC6FB11C534EE0028CDEC /* Source Test */ = {
 			isa = PBXGroup;
 			children = (
-				424CF97911C9863E00CF0019 /* test_prefix.pch */,
-				429DC6FC11C5350F0028CDEC /* AppDelegate.h */,
-				429DC6FD11C5350F0028CDEC /* AppDelegate.m */,
-				429DC6FE11C5350F0028CDEC /* English.lproj */,
-				429DC70311C5350F0028CDEC /* Info.plist */,
-				429DC70411C5350F0028CDEC /* main.m */,
+				42D46014186F865600574C87 /* AppDelegate.h */,
+				42D46015186F865600574C87 /* AppDelegate.m */,
+				42D46016186F865600574C87 /* test_prefix.pch */,
+				42D46018186F867000574C87 /* English.lproj */,
+				42D4601D186F867000574C87 /* Info.plist */,
+				42D4601E186F867000574C87 /* main.m */,
 			);
 			name = "Source Test";
+			path = ../Test;
 			sourceTree = "<group>";
 		};
-		429DC6FE11C5350F0028CDEC /* English.lproj */ = {
+		42D46018186F867000574C87 /* English.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				429DC6FF11C5350F0028CDEC /* InfoPlist.strings */,
-				429DC70111C5350F0028CDEC /* MainMenu.xib */,
+				42D46019186F867000574C87 /* InfoPlist.strings */,
+				42D4601B186F867000574C87 /* MainMenu.xib */,
 			);
-			name = English.lproj;
-			path = Test/English.lproj;
+			path = English.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,8 +349,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429DC70711C5350F0028CDEC /* InfoPlist.strings in Resources */,
-				429DC70811C5350F0028CDEC /* MainMenu.xib in Resources */,
+				42D4601F186F867000574C87 /* InfoPlist.strings in Resources */,
+				42D46020186F867000574C87 /* MainMenu.xib in Resources */,
+				42D46021186F867000574C87 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429DC70611C5350F0028CDEC /* AppDelegate.m in Sources */,
-				429DC70A11C5350F0028CDEC /* main.m in Sources */,
+				42D46022186F867000574C87 /* main.m in Sources */,
+				42D46017186F865600574C87 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,18 +409,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		429DC6FF11C5350F0028CDEC /* InfoPlist.strings */ = {
+		42D46019186F867000574C87 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				429DC70011C5350F0028CDEC /* English */,
+				42D4601A186F867000574C87 /* English */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		429DC70111C5350F0028CDEC /* MainMenu.xib */ = {
+		42D4601B186F867000574C87 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				429DC70211C5350F0028CDEC /* English */,
+				42D4601C186F867000574C87 /* English */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -430,7 +432,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -447,7 +448,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
@@ -484,7 +484,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -509,7 +508,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -534,7 +532,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -542,7 +539,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Test/test_prefix.pch;
+				GCC_PREFIX_HEADER = ../Test/test_prefix.pch;
 				INFOPLIST_FILE = Test/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -560,14 +557,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Test/test_prefix.pch;
+				GCC_PREFIX_HEADER = ../Test/test_prefix.pch;
 				INFOPLIST_FILE = Test/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
