@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4203E0D2186F36C500AB7A50 /* daemonize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0C6186F36C500AB7A50 /* daemonize.m */; };
+		4203E0D3186F36C500AB7A50 /* exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0C8186F36C500AB7A50 /* exception.m */; };
+		4203E0D4186F36C500AB7A50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0C9186F36C500AB7A50 /* main.m */; };
+		4203E0D5186F36C500AB7A50 /* NCWorkerPluginAdvanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0CC186F36C500AB7A50 /* NCWorkerPluginAdvanced.m */; };
+		4203E0D6186F36C500AB7A50 /* signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0CE186F36C500AB7A50 /* signal.m */; };
+		4203E0D7186F36C500AB7A50 /* zombie.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0D1186F36C500AB7A50 /* zombie.m */; };
+		4203E0DB186F371A00AB7A50 /* NCWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4203E0D8186F371A00AB7A50 /* NCWorker.h */; };
+		4203E0DC186F371A00AB7A50 /* NCWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0D9186F371A00AB7A50 /* NCWorker.m */; };
+		4203E0DD186F371A00AB7A50 /* NCWorkerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4203E0DA186F371A00AB7A50 /* NCWorkerPrivate.h */; };
+		429DC6FA11C534A50028CDEC /* libNCWorkerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC6D511C533940028CDEC /* libNCWorkerLib.a */; };
+		429DC70611C5350F0028CDEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DC6FD11C5350F0028CDEC /* AppDelegate.m */; };
+		429DC70711C5350F0028CDEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 429DC6FF11C5350F0028CDEC /* InfoPlist.strings */; };
+		429DC70811C5350F0028CDEC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429DC70111C5350F0028CDEC /* MainMenu.xib */; };
+		429DC70A11C5350F0028CDEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DC70411C5350F0028CDEC /* main.m */; };
+		429DC71211C535490028CDEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC71111C535490028CDEC /* Cocoa.framework */; };
+		429DC71C11C5359F0028CDEC /* NewtonCommanderHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */; };
+		429DC81911C53FB40028CDEC /* NCWorkerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */; };
+		42E0E48511F1245000029764 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E0E48411F1245000029764 /* CoreServices.framework */; };
+		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		429DC6DB11C533990028CDEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
+			remoteInfo = NCWorker;
+		};
+		429DC6F611C534960028CDEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
+			remoteInfo = NCWorker;
+		};
+		429DC6F811C534960028CDEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 429DC6D411C533940028CDEC;
+			remoteInfo = NCWorkerLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		429DC71F11C535BD0028CDEC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				429DC71C11C5359F0028CDEC /* NewtonCommanderHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		4203E0C5186F36C500AB7A50 /* daemonize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daemonize.h; sourceTree = "<group>"; };
+		4203E0C6186F36C500AB7A50 /* daemonize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daemonize.m; sourceTree = "<group>"; };
+		4203E0C7186F36C500AB7A50 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exception.h; sourceTree = "<group>"; };
+		4203E0C8186F36C500AB7A50 /* exception.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exception.m; sourceTree = "<group>"; };
+		4203E0C9186F36C500AB7A50 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4203E0CA186F36C500AB7A50 /* NCWorkerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerPlugin.h; sourceTree = "<group>"; };
+		4203E0CB186F36C500AB7A50 /* NCWorkerPluginAdvanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerPluginAdvanced.h; sourceTree = "<group>"; };
+		4203E0CC186F36C500AB7A50 /* NCWorkerPluginAdvanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWorkerPluginAdvanced.m; sourceTree = "<group>"; };
+		4203E0CD186F36C500AB7A50 /* signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signal.h; sourceTree = "<group>"; };
+		4203E0CE186F36C500AB7A50 /* signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signal.m; sourceTree = "<group>"; };
+		4203E0CF186F36C500AB7A50 /* worker_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worker_prefix.pch; sourceTree = "<group>"; };
+		4203E0D0186F36C500AB7A50 /* zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zombie.h; sourceTree = "<group>"; };
+		4203E0D1186F36C500AB7A50 /* zombie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zombie.m; sourceTree = "<group>"; };
+		4203E0D8186F371A00AB7A50 /* NCWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorker.h; sourceTree = "<group>"; };
+		4203E0D9186F371A00AB7A50 /* NCWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWorker.m; sourceTree = "<group>"; };
+		4203E0DA186F371A00AB7A50 /* NCWorkerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerPrivate.h; sourceTree = "<group>"; };
+		424CF97911C9863E00CF0019 /* test_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = test_prefix.pch; path = Test/test_prefix.pch; sourceTree = "<group>"; };
+		429DC6D511C533940028CDEC /* libNCWorkerLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNCWorkerLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		429DC6F011C5348F0028CDEC /* NCWorkerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCWorkerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		429DC6FC11C5350F0028CDEC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Test/AppDelegate.h; sourceTree = "<group>"; };
+		429DC6FD11C5350F0028CDEC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Test/AppDelegate.m; sourceTree = "<group>"; };
+		429DC70011C5350F0028CDEC /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		429DC70211C5350F0028CDEC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
+		429DC70311C5350F0028CDEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Test/Info.plist; sourceTree = "<group>"; };
+		429DC70411C5350F0028CDEC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Test/main.m; sourceTree = "<group>"; };
+		429DC71111C535490028CDEC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerProtocol.h; sourceTree = "<group>"; };
+		42E0E48411F1245000029764 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NewtonCommanderHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		429DC6D311C533940028CDEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429DC6EE11C5348F0028CDEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				429DC6FA11C534A50028CDEC /* libNCWorkerLib.a in Frameworks */,
+				429DC71211C535490028CDEC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F9B0486AA7600D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+				42E0E48511F1245000029764 /* CoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* NCWorkerChild */ = {
+			isa = PBXGroup;
+			children = (
+				4203E0C4186F2F3100AB7A50 /* Classes */,
+				429DC6FB11C534EE0028CDEC /* Source Test */,
+				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = NCWorkerChild;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source Worker */ = {
+			isa = PBXGroup;
+			children = (
+				4203E0C5186F36C500AB7A50 /* daemonize.h */,
+				4203E0C6186F36C500AB7A50 /* daemonize.m */,
+				4203E0C7186F36C500AB7A50 /* exception.h */,
+				4203E0C8186F36C500AB7A50 /* exception.m */,
+				4203E0C9186F36C500AB7A50 /* main.m */,
+				4203E0CA186F36C500AB7A50 /* NCWorkerPlugin.h */,
+				4203E0CB186F36C500AB7A50 /* NCWorkerPluginAdvanced.h */,
+				4203E0CC186F36C500AB7A50 /* NCWorkerPluginAdvanced.m */,
+				4203E0CD186F36C500AB7A50 /* signal.h */,
+				4203E0CE186F36C500AB7A50 /* signal.m */,
+				4203E0CF186F36C500AB7A50 /* worker_prefix.pch */,
+				4203E0D0186F36C500AB7A50 /* zombie.h */,
+				4203E0D1186F36C500AB7A50 /* zombie.m */,
+			);
+			name = "Source Worker";
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				42E0E48411F1245000029764 /* CoreServices.framework */,
+				429DC71111C535490028CDEC /* Cocoa.framework */,
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */,
+				429DC6D511C533940028CDEC /* libNCWorkerLib.a */,
+				429DC6F011C5348F0028CDEC /* NCWorkerTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4203E0C4186F2F3100AB7A50 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source Worker */,
+				429DC6DD11C533CA0028CDEC /* Source Library */,
+				4264A5BE11BB1E13005468D2 /* Source Protocol */,
+			);
+			name = Classes;
+			path = Classes/osx;
+			sourceTree = "<group>";
+		};
+		4264A5BE11BB1E13005468D2 /* Source Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */,
+			);
+			name = "Source Protocol";
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		429DC6DD11C533CA0028CDEC /* Source Library */ = {
+			isa = PBXGroup;
+			children = (
+				4203E0D8186F371A00AB7A50 /* NCWorker.h */,
+				4203E0D9186F371A00AB7A50 /* NCWorker.m */,
+				4203E0DA186F371A00AB7A50 /* NCWorkerPrivate.h */,
+			);
+			name = "Source Library";
+			path = Library;
+			sourceTree = "<group>";
+		};
+		429DC6FB11C534EE0028CDEC /* Source Test */ = {
+			isa = PBXGroup;
+			children = (
+				424CF97911C9863E00CF0019 /* test_prefix.pch */,
+				429DC6FC11C5350F0028CDEC /* AppDelegate.h */,
+				429DC6FD11C5350F0028CDEC /* AppDelegate.m */,
+				429DC6FE11C5350F0028CDEC /* English.lproj */,
+				429DC70311C5350F0028CDEC /* Info.plist */,
+				429DC70411C5350F0028CDEC /* main.m */,
+			);
+			name = "Source Test";
+			sourceTree = "<group>";
+		};
+		429DC6FE11C5350F0028CDEC /* English.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				429DC6FF11C5350F0028CDEC /* InfoPlist.strings */,
+				429DC70111C5350F0028CDEC /* MainMenu.xib */,
+			);
+			name = English.lproj;
+			path = Test/English.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		429DC6D111C533940028CDEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4203E0DD186F371A00AB7A50 /* NCWorkerPrivate.h in Headers */,
+				429DC81911C53FB40028CDEC /* NCWorkerProtocol.h in Headers */,
+				4203E0DB186F371A00AB7A50 /* NCWorker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		429DC6D411C533940028CDEC /* NCWorkerLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 429DC6DE11C533CA0028CDEC /* Build configuration list for PBXNativeTarget "NCWorkerLib" */;
+			buildPhases = (
+				429DC6D111C533940028CDEC /* Headers */,
+				429DC6D211C533940028CDEC /* Sources */,
+				429DC6D311C533940028CDEC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				429DC6DC11C533990028CDEC /* PBXTargetDependency */,
+			);
+			name = NCWorkerLib;
+			productName = NCWorkerLib;
+			productReference = 429DC6D511C533940028CDEC /* libNCWorkerLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		429DC6EF11C5348F0028CDEC /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 429DC6F511C534900028CDEC /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				429DC6EC11C5348F0028CDEC /* Resources */,
+				429DC6ED11C5348F0028CDEC /* Sources */,
+				429DC6EE11C5348F0028CDEC /* Frameworks */,
+				429DC71F11C535BD0028CDEC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				429DC6F711C534960028CDEC /* PBXTargetDependency */,
+				429DC6F911C534960028CDEC /* PBXTargetDependency */,
+			);
+			name = Demo;
+			productName = NCWorkerTest;
+			productReference = 429DC6F011C5348F0028CDEC /* NCWorkerTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DD76F960486AA7600D96B5E /* NCWorker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "NCWorker" */;
+			buildPhases = (
+				8DD76F990486AA7600D96B5E /* Sources */,
+				8DD76F9B0486AA7600D96B5E /* Frameworks */,
+				8DD76F9E0486AA7600D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NCWorker;
+			productInstallPath = "$(HOME)/bin";
+			productName = NCWorkerChild;
+			productReference = 8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "NCWorker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* NCWorkerChild */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				429DC6EF11C5348F0028CDEC /* Demo */,
+				8DD76F960486AA7600D96B5E /* NCWorker */,
+				429DC6D411C533940028CDEC /* NCWorkerLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		429DC6EC11C5348F0028CDEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				429DC70711C5350F0028CDEC /* InfoPlist.strings in Resources */,
+				429DC70811C5350F0028CDEC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		429DC6D211C533940028CDEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4203E0DC186F371A00AB7A50 /* NCWorker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429DC6ED11C5348F0028CDEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				429DC70611C5350F0028CDEC /* AppDelegate.m in Sources */,
+				429DC70A11C5350F0028CDEC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F990486AA7600D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4203E0D2186F36C500AB7A50 /* daemonize.m in Sources */,
+				4203E0D6186F36C500AB7A50 /* signal.m in Sources */,
+				4203E0D4186F36C500AB7A50 /* main.m in Sources */,
+				4203E0D3186F36C500AB7A50 /* exception.m in Sources */,
+				4203E0D5186F36C500AB7A50 /* NCWorkerPluginAdvanced.m in Sources */,
+				4203E0D7186F36C500AB7A50 /* zombie.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		429DC6DC11C533990028CDEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DD76F960486AA7600D96B5E /* NCWorker */;
+			targetProxy = 429DC6DB11C533990028CDEC /* PBXContainerItemProxy */;
+		};
+		429DC6F711C534960028CDEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DD76F960486AA7600D96B5E /* NCWorker */;
+			targetProxy = 429DC6F611C534960028CDEC /* PBXContainerItemProxy */;
+		};
+		429DC6F911C534960028CDEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 429DC6D411C533940028CDEC /* NCWorkerLib */;
+			targetProxy = 429DC6F811C534960028CDEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		429DC6FF11C5350F0028CDEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				429DC70011C5350F0028CDEC /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		429DC70111C5350F0028CDEC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				429DC70211C5350F0028CDEC /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB927508733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Classes/osx/Worker/worker_prefix.pch;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = NewtonCommanderHelper;
+			};
+			name = Debug;
+		};
+		1DEB927608733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Classes/osx/Worker/worker_prefix.pch;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = NewtonCommanderHelper;
+			};
+			name = Release;
+		};
+		1DEB927908733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1DEB927A08733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		429DC6D911C533950028CDEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/lib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = NCWorkerLib;
+			};
+			name = Debug;
+		};
+		429DC6DA11C533950028CDEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/lib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = NCWorkerLib;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		429DC6F311C534900028CDEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Test/test_prefix.pch;
+				INFOPLIST_FILE = Test/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = NCWorkerTest;
+			};
+			name = Debug;
+		};
+		429DC6F411C534900028CDEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Test/test_prefix.pch;
+				INFOPLIST_FILE = Test/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = NCWorkerTest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "NCWorker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927508733DD40010E9CD /* Debug */,
+				1DEB927608733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "NCWorker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927908733DD40010E9CD /* Debug */,
+				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		429DC6DE11C533CA0028CDEC /* Build configuration list for PBXNativeTarget "NCWorkerLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429DC6D911C533950028CDEC /* Debug */,
+				429DC6DA11C533950028CDEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		429DC6F511C534900028CDEC /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429DC6F311C534900028CDEC /* Debug */,
+				429DC6F411C534900028CDEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

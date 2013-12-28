@@ -1,7 +1,13 @@
-pod "newton-commander-browse", :path => "../newton-commander-browse.podspec"
+xcodeproj "../NCWorker"
+
+#platform     = :osx, '10.9'
+#.osx.deployment_target = '10.9'
+
+#pod "newton-commander-browse", :path => "../newton-commander-browse.podspec"
+#pod 'newton-commander-quark', :git => "https://github.com/neoneye/newton-commander-quark.git"
 
 target "Demo" do
 end
 
-target "DemoTests" do
-end
+#target "DemoTests" do
+#end

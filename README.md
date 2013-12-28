@@ -4,7 +4,7 @@ The child process that runs for each open tab within Newton Commander.
 
 When you open a tab in the UI then a browse-worker process is started.
 
-When you kill a tab in the UI then a browse-worker process is killed.
+When you close a tab in the UI then a browse-worker process is killed.
 
 If a browse-worker process hangs forever then it doesn't affect the parent process (Newton Commander).
 
