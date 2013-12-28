@@ -1,12 +1,6 @@
-#
-# Be sure to run `pod spec lint NAME.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# To learn more about the attributes see http://docs.cocoapods.org/specification.html
-#
 Pod::Spec.new do |s|
   s.name         = "newton-commander-browse"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Worker process used by Newton Commander for each open panel."
   s.description  = <<-DESC
       The child process that runs for each open tab within Newton Commander.
