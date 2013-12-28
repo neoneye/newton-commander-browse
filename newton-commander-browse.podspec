@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name         = "newton-commander-browse"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Worker process used by Newton Commander for each open panel."
   s.description  = <<-DESC
       The child process that runs for each open tab within Newton Commander.
@@ -23,9 +23,8 @@ Pod::Spec.new do |s|
   s.author       = { "Simon Strandgaard" => "simon@opcoders.com" }
   s.source       = { :git => "https://github.com/neoneye/newton-commander-browse.git", :tag => s.version.to_s }
 
-  # s.platform     = :ios, '5.0'
-  # s.ios.deployment_target = '5.0'
-  # s.osx.deployment_target = '10.7'
+  s.platform     = :osx, '10.9'
+  s.osx.deployment_target = '10.9'
   s.requires_arc = true
 
   s.source_files = 'Classes'

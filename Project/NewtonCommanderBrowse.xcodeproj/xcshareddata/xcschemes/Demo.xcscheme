@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
-               BuildableName = "NCWorkerTest.app"
+               BlueprintIdentifier = "42D46059186F8E1200574C87"
+               BuildableName = "Demo.app"
                BlueprintName = "Demo"
-               ReferencedContainer = "container:NCWorker.xcodeproj">
+               ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
-            BuildableName = "NCWorkerTest.app"
+            BlueprintIdentifier = "42D46059186F8E1200574C87"
+            BuildableName = "Demo.app"
             BlueprintName = "Demo"
-            ReferencedContainer = "container:NCWorker.xcodeproj">
+            ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
-            BuildableName = "NCWorkerTest.app"
+            BlueprintIdentifier = "42D46059186F8E1200574C87"
+            BuildableName = "Demo.app"
             BlueprintName = "Demo"
-            ReferencedContainer = "container:NCWorker.xcodeproj">
+            ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
-            BuildableName = "NCWorkerTest.app"
+            BlueprintIdentifier = "42D46059186F8E1200574C87"
+            BuildableName = "Demo.app"
             BlueprintName = "Demo"
-            ReferencedContainer = "container:NCWorker.xcodeproj">
+            ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
