@@ -489,30 +489,45 @@
 #pragma mark -
 #pragma mark Worker Class
 
-@interface NCWorker (Private)
+@interface NCWorker () {
+	id m_controller;
+	NSString* m_label;
+	NSString* m_path_to_worker;
+	NCWorkerThread* m_thread;
+	NSString* m_identifier;
+	int m_uid;
+}
+
 +(NSString*)createIdentifier;
 -(void)restartTask;
 @end
 
 @implementation NCWorker
 
--(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label {
+-(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker {
     self = [super init];
     if(self != nil) {
 		m_controller = controller;
 		m_label = [label copy];
+		m_path_to_worker = [pathToWorker copy];
 		m_thread = nil;
 		m_identifier = [NCWorker createIdentifier];
 		[self resetUid];
 		
 		NSAssert(m_controller, @"must be initialized");
 		NSAssert(m_label, @"must be initialized");
+		NSAssert(m_path_to_worker, @"must be initialized");
 		NSAssert(m_identifier, @"must be initialized");
     }
     return self;
 }
 
-+(NSString*)pathToWorker {
+
+-(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label {
+	return [self initWithController:controller label:label pathToWorker:[NCWorker defaultPathToWorker]];
+}
+
++(NSString*)defaultPathToWorker {
 	NSString *bundlePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"NewtonCommanderBrowse.bundle"];
 	NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
 	NSAssert(bundle, @"cannot find our bundle");
@@ -547,7 +562,7 @@
 	// uid_str = @"0";   // user: root
 	// uid_str = @"";    // ignore user
 
-	NSString* path = [NCWorker pathToWorker];
+	NSString* path = m_path_to_worker;
 	// TODO: use worker label in cname and pname's to distinguish between workers
 	NSString* cname = [NSString stringWithFormat:@"child_%@", m_identifier];
 	NSString* pname = [NSString stringWithFormat:@"parent_%@", m_identifier];

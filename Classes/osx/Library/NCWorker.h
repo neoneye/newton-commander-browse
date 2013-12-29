@@ -15,16 +15,13 @@
 
 @end
 
-@interface NCWorker : NSObject {
-	id m_controller;
-	NSString* m_label;
-	NCWorkerThread* m_thread;
-	NSString* m_identifier;
-	int m_uid;
-}
+@interface NCWorker : NSObject
+
 -(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label;
 
-+(NSString*)pathToWorker;
+-(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker;
+
++(NSString*)defaultPathToWorker;
 
 -(void)setUid:(int)uid;
 -(void)resetUid;
