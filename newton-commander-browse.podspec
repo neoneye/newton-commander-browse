@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "newton-commander-browse"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "Worker process used by Newton Commander for each open panel."
   s.description  = <<-DESC
       The child process that runs for each open tab within Newton Commander.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes/**/**/*.{h,m}'
-  s.resources = 'Assets'
+  # s.resources = 'Assets'
 
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
