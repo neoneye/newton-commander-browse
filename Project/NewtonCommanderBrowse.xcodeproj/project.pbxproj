@@ -18,10 +18,10 @@
 		4203E0DB186F371A00AB7A50 /* NCWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4203E0D8186F371A00AB7A50 /* NCWorker.h */; };
 		4203E0DC186F371A00AB7A50 /* NCWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203E0D9186F371A00AB7A50 /* NCWorker.m */; };
 		4203E0DD186F371A00AB7A50 /* NCWorkerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4203E0DA186F371A00AB7A50 /* NCWorkerPrivate.h */; };
-		429DC6FA11C534A50028CDEC /* libNCWorkerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC6D511C533940028CDEC /* libNCWorkerLib.a */; };
 		429DC71211C535490028CDEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC71111C535490028CDEC /* Cocoa.framework */; };
 		429DC71C11C5359F0028CDEC /* NewtonCommanderHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DD76FA10486AA7600D96B5E /* NewtonCommanderHelper */; };
 		429DC81911C53FB40028CDEC /* NCWorkerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */; };
+		42B31F11186FD0EA0011F79C /* NCFileItem+FileItemsForPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B31F0F186FD0E20011F79C /* NCFileItem+FileItemsForPath.m */; };
 		42D46017186F865600574C87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D46015186F865600574C87 /* AppDelegate.m */; };
 		42D4601F186F867000574C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D46019186F867000574C87 /* InfoPlist.strings */; };
 		42D46020186F867000574C87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D4601B186F867000574C87 /* MainMenu.xib */; };
@@ -33,26 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		429DC6DB11C533990028CDEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
-			remoteInfo = NCWorker;
-		};
 		429DC6F611C534960028CDEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
 			remoteInfo = NCWorker;
-		};
-		429DC6F811C534960028CDEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 429DC6D411C533940028CDEC;
-			remoteInfo = NCWorkerLib;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -101,6 +87,8 @@
 		429DC6F011C5348F0028CDEC /* NCWorkerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCWorkerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429DC71111C535490028CDEC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		429DC81811C53FB40028CDEC /* NCWorkerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWorkerProtocol.h; sourceTree = "<group>"; };
+		42B31F0E186FD0E20011F79C /* NCFileItem+FileItemsForPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NCFileItem+FileItemsForPath.h"; sourceTree = "<group>"; };
+		42B31F0F186FD0E20011F79C /* NCFileItem+FileItemsForPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NCFileItem+FileItemsForPath.m"; sourceTree = "<group>"; };
 		42D46014186F865600574C87 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42D46015186F865600574C87 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		42D46016186F865600574C87 /* test_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test_prefix.pch; sourceTree = "<group>"; };
@@ -130,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429DC6FA11C534A50028CDEC /* libNCWorkerLib.a in Frameworks */,
 				429DC71211C535490028CDEC /* Cocoa.framework in Frameworks */,
 				BF5820E50800440F819319D4 /* libPods-Demo.a in Frameworks */,
 			);
@@ -167,6 +154,8 @@
 		08FB7795FE84155DC02AAC07 /* Source Worker */ = {
 			isa = PBXGroup;
 			children = (
+				42B31F0E186FD0E20011F79C /* NCFileItem+FileItemsForPath.h */,
+				42B31F0F186FD0E20011F79C /* NCFileItem+FileItemsForPath.m */,
 				4203E0C5186F36C500AB7A50 /* daemonize.h */,
 				4203E0C6186F36C500AB7A50 /* daemonize.m */,
 				4203E0C7186F36C500AB7A50 /* exception.h */,
@@ -289,7 +278,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				429DC6DC11C533990028CDEC /* PBXTargetDependency */,
 			);
 			name = NCWorkerLib;
 			productName = NCWorkerLib;
@@ -311,7 +299,6 @@
 			);
 			dependencies = (
 				429DC6F711C534960028CDEC /* PBXTargetDependency */,
-				429DC6F911C534960028CDEC /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = NCWorkerTest;
@@ -497,6 +484,7 @@
 			files = (
 				4203E0D2186F36C500AB7A50 /* daemonize.m in Sources */,
 				4203E0D6186F36C500AB7A50 /* signal.m in Sources */,
+				42B31F11186FD0EA0011F79C /* NCFileItem+FileItemsForPath.m in Sources */,
 				4203E0D4186F36C500AB7A50 /* main.m in Sources */,
 				4203E0D3186F36C500AB7A50 /* exception.m in Sources */,
 				4203E0D5186F36C500AB7A50 /* NCWorkerPluginAdvanced.m in Sources */,
@@ -507,20 +495,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		429DC6DC11C533990028CDEC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8DD76F960486AA7600D96B5E /* NCWorker */;
-			targetProxy = 429DC6DB11C533990028CDEC /* PBXContainerItemProxy */;
-		};
 		429DC6F711C534960028CDEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DD76F960486AA7600D96B5E /* NCWorker */;
 			targetProxy = 429DC6F611C534960028CDEC /* PBXContainerItemProxy */;
-		};
-		429DC6F911C534960028CDEC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 429DC6D411C533940028CDEC /* NCWorkerLib */;
-			targetProxy = 429DC6F811C534960028CDEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
