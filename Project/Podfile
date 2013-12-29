@@ -3,7 +3,8 @@ platform :osx, '10.9'
 xcodeproj "NewtonCommanderBrowse"
 
 #pod "newton-commander-browse", :path => "../newton-commander-browse.podspec"
-pod 'newton-commander-quark', :git => "https://github.com/neoneye/newton-commander-quark.git"
+#pod 'newton-commander-quark', :git => "https://github.com/neoneye/newton-commander-quark.git"
+pod 'newton-commander-quark'
 
 target "Demo" do
 end
