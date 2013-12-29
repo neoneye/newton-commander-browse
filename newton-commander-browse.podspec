@@ -31,5 +31,10 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Classes/osx/Library/*.h'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
   s.dependency 'newton-commander-quark'
-  s.prepare_command = 'ruby NewtonCommanderBrowseSupport/build_files.rb'
+  
+  def s.pre_install(pod, target_definition)
+      Dir.chdir(pod.root) do
+        system('ruby NewtonCommanderBrowseSupport/build_files.rb')
+      end
+    end
 end

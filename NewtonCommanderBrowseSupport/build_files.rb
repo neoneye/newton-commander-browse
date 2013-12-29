@@ -1,5 +1,5 @@
-puts "Compiling NewtonCommanderBrowse's worker process"
+puts "XCompiling NewtonCommanderBrowse's worker process"
 
-system 'xcodebuild -scheme Demo archive -archivePath ./My.xcarchive'
+system 'xcodebuild -project Project/NewtonCommanderBrowse.xcodeproj -target Demo CONFIGURATION_BUILD_DIR=NewtonCommanderBrowseBinary'
 
-puts "Finished compiling NewtonCommanderBrowse's worker process"
+puts "XFinished compiling NewtonCommanderBrowse's worker process"
