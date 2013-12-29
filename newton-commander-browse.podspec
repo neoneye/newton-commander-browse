@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "newton-commander-browse"
-  s.version      = "0.1.4"
+  s.version      = "0.1.5"
   s.summary      = "Worker process used by Newton Commander for each open panel."
   s.description  = <<-DESC
       The child process that runs for each open tab within Newton Commander.
@@ -21,13 +21,15 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
   s.requires_arc = true
 
-  s.source_files = 'Classes/**/**/*.{h,m}'
+  s.source_files = 'Classes/osx/Library/*.{h,m}', 'NewtonCommanderBrowseSupport'
   # s.resources = 'Assets'
 
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
-  # s.public_header_files = 'Classes/**/*.h'
+  
+  s.preserve_paths = 'NewtonCommanderBrowseSupport/*'
+  s.public_header_files = 'Classes/osx/Library/*.h'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
-  # s.dependency 'JSONKit', '~> 1.4'
   s.dependency 'newton-commander-quark'
+  s.prepare_command = 'ruby NewtonCommanderBrowseSupport/build_files.rb'
 end
