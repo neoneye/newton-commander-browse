@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D8057A2E-2836-46E1-90F4-41A83A21F5A3</string>
+	<string>D38713A2-D8A5-4ACE-B8D1-15152AE583DE</string>
 	<key>IDESourceControlProjectName</key>
 	<string>NewtonCommanderBrowse</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1FAC68F5-E8B5-4544-AFD5-0709AC1EF7B0</key>
+		<key>9328A949-9F86-42EC-B86A-078099ECC00B</key>
 		<string>https://github.com/neoneye/newton-commander-browse.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Project/NewtonCommanderBrowse.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1FAC68F5-E8B5-4544-AFD5-0709AC1EF7B0</key>
+		<key>9328A949-9F86-42EC-B86A-078099ECC00B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1FAC68F5-E8B5-4544-AFD5-0709AC1EF7B0</string>
+	<string>9328A949-9F86-42EC-B86A-078099ECC00B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1FAC68F5-E8B5-4544-AFD5-0709AC1EF7B0</string>
+			<string>9328A949-9F86-42EC-B86A-078099ECC00B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>opcoders_commander_browse</string>
 		</dict>
