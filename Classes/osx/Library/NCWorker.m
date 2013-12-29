@@ -491,7 +491,6 @@
 
 @interface NCWorker (Private)
 +(NSString*)createIdentifier;
--(NSString*)taskPath;
 -(void)restartTask;
 @end
 
@@ -513,19 +512,12 @@
     return self;
 }
 
--(NSString*)taskPath {
-	NSFileManager* fm = [NSFileManager defaultManager];
-	NSBundle* bundle = [NSBundle mainBundle];
++(NSString*)pathToWorker {
+	NSString *bundlePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"NewtonCommanderBrowse.bundle"];
+	NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
 	NSAssert(bundle, @"cannot find our bundle");
-	NSString* path = [bundle pathForAuxiliaryExecutable:@"NewtonCommanderHelper"];
-	if([fm fileExistsAtPath:path] == NO) {
-		NSRunAlertPanel(
-			@"NCWorker is missing, cannot run program",
-			@"Is supposed to be in the MacOS folder.",
-			nil, nil, nil
-		);
-		[NSApp terminate:self];
-	}
+	NSString *path = [bundle.resourcePath stringByAppendingPathComponent:@"NewtonCommanderHelper"];
+	NSAssert(path, @"bundle does not contain the worker");
 	return path;
 }
 
@@ -555,7 +547,7 @@
 	// uid_str = @"0";   // user: root
 	// uid_str = @"";    // ignore user
 
-	NSString* path = [self taskPath];
+	NSString* path = [NCWorker pathToWorker];
 	// TODO: use worker label in cname and pname's to distinguish between workers
 	NSString* cname = [NSString stringWithFormat:@"child_%@", m_identifier];
 	NSString* pname = [NSString stringWithFormat:@"parent_%@", m_identifier];

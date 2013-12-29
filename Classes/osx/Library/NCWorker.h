@@ -24,6 +24,8 @@
 }
 -(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label;
 
++(NSString*)pathToWorker;
+
 -(void)setUid:(int)uid;
 -(void)resetUid;
 
