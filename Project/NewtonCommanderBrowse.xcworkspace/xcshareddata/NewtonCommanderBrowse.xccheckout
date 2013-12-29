@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C3BD4CCE-085F-4731-AAE0-E422328F521A</string>
+	<string>D8057A2E-2836-46E1-90F4-41A83A21F5A3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>NewtonCommanderBrowse</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/neoneye/newton-commander-browse.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Project/NewtonCommanderBrowse.xcodeproj/project.xcworkspace</string>
+	<string>Project/NewtonCommanderBrowse.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1FAC68F5-E8B5-4544-AFD5-0709AC1EF7B0</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/neoneye/newton-commander-browse.git</string>

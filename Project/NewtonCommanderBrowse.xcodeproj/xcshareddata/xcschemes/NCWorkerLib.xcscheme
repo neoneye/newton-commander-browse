@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42D4602B186F8DEB00574C87"
-               BuildableName = "libNewtonCommanderBrowse.a"
-               BlueprintName = "NewtonCommanderBrowse"
+               BlueprintIdentifier = "429DC6D411C533940028CDEC"
+               BuildableName = "libNCWorkerLib.a"
+               BlueprintName = "NCWorkerLib"
                ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42D4603E186F8DEB00574C87"
-               BuildableName = "NewtonCommanderBrowseTests.xctest"
-               BlueprintName = "NewtonCommanderBrowseTests"
-               ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42D46073186F8E1200574C87"
-               BuildableName = "DemoTests.xctest"
-               BlueprintName = "DemoTests"
-               ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

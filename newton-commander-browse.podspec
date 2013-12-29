@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes/osx/Library/*.{h,m}', 'NewtonCommanderBrowseSupport'
-  # s.resources = 'Assets'
+  s.resource_bundles = { 'NewtonCommanderBrowse' => "NewtonCommanderBrowseBundle/*" }
 
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
   s.frameworks = 'Cocoa'
   s.dependency 'newton-commander-quark'
   
-  def s.pre_install(pod, target_definition)
-      Dir.chdir(pod.root) do
-        system('ruby NewtonCommanderBrowseSupport/build_files.rb')
-      end
-    end
+  # def s.pre_install(pod, target_definition)
+  #     Dir.chdir(pod.root) do
+  #       system('ruby NewtonCommanderBrowseSupport/build_files.rb')
+  #     end
+  # end
 end

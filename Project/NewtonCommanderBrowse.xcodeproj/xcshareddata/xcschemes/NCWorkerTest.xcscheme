@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42D46059186F8E1200574C87"
-               BuildableName = "Demo.app"
+               BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
+               BuildableName = "NCWorkerTest.app"
                BlueprintName = "Demo"
                ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
             </BuildableReference>
@@ -32,8 +32,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "42D46059186F8E1200574C87"
-            BuildableName = "Demo.app"
+            BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
+            BuildableName = "NCWorkerTest.app"
             BlueprintName = "Demo"
             ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
          </BuildableReference>
@@ -51,8 +51,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "42D46059186F8E1200574C87"
-            BuildableName = "Demo.app"
+            BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
+            BuildableName = "NCWorkerTest.app"
             BlueprintName = "Demo"
             ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
          </BuildableReference>
@@ -69,8 +69,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "42D46059186F8E1200574C87"
-            BuildableName = "Demo.app"
+            BlueprintIdentifier = "429DC6EF11C5348F0028CDEC"
+            BuildableName = "NCWorkerTest.app"
             BlueprintName = "Demo"
             ReferencedContainer = "container:NewtonCommanderBrowse.xcodeproj">
          </BuildableReference>
