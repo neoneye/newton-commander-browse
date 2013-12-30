@@ -23,6 +23,7 @@
 		42D46021186F867000574C87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42D4601D186F867000574C87 /* Info.plist */; };
 		42D46022186F867000574C87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4601E186F867000574C87 /* main.m */; };
 		42E0E48511F1245000029764 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E0E48411F1245000029764 /* CoreServices.framework */; };
+		42F68FBC1872181600BFA489 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC71111C535490028CDEC /* Cocoa.framework */; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 		BF5820E50800440F819319D4 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EB76473F644196AE6CF6F7 /* libPods-Demo.a */; };
 /* End PBXBuildFile section */
@@ -61,7 +62,6 @@
 
 /* Begin PBXFileReference section */
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		264EAFAE9E964C79AA93BA79 /* Pods-NCWorkerLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NCWorkerLib.xcconfig"; path = "Pods/Pods-NCWorkerLib.xcconfig"; sourceTree = "<group>"; };
 		4203E0C5186F36C500AB7A50 /* daemonize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daemonize.h; sourceTree = "<group>"; };
 		4203E0C6186F36C500AB7A50 /* daemonize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = daemonize.m; sourceTree = "<group>"; };
 		4203E0C7186F36C500AB7A50 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exception.h; sourceTree = "<group>"; };
@@ -109,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F68FBC1872181600BFA489 /* Cocoa.framework in Frameworks */,
 				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
 				42E0E48511F1245000029764 /* CoreServices.framework in Frameworks */,
 				0FA48A3A70CA46D893E7B894 /* libPods-NCWorker.a in Frameworks */,
@@ -128,7 +129,6 @@
 				ADFF47813BE74BB89B4EED4D /* Pods-Demo.xcconfig */,
 				6532B236F19E4A2CBA3CC642 /* Frameworks */,
 				B01997A4B9A54811B5DA48E1 /* Pods-NCWorker.xcconfig */,
-				264EAFAE9E964C79AA93BA79 /* Pods-NCWorkerLib.xcconfig */,
 			);
 			name = NCWorkerChild;
 			sourceTree = "<group>";

@@ -2,11 +2,10 @@
 // NCWorker.h
 // Newton Commander
 //
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 
 @class NCWorker;
-@class NCWorkerThread;
 
 
 @protocol NCWorkerController
@@ -14,6 +13,7 @@
 -(void)worker:(NCWorker*)worker response:(NSDictionary*)dict;
 
 @end
+
 
 @interface NCWorker : NSObject
 
