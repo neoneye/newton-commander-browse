@@ -19,9 +19,17 @@
 
 @implementation AppDelegate
 
++(NSString*)pathToWorker {
+	NSBundle* bundle = [NSBundle mainBundle];
+	NSAssert(bundle, @"cannot find our bundle");
+	NSString *path = [bundle pathForAuxiliaryExecutable:@"NewtonCommanderHelper"];
+	NSAssert(path, @"bundle does not contain the worker");
+	return path;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-	self.worker = [[NCWorker alloc] initWithController:self label:@"left_panel"];
+	self.worker = [[NCWorker alloc] initWithController:self label:@"left_panel" pathToWorker:[AppDelegate pathToWorker]];
 	
 	[self request1];
 	[self performSelector: @selector(request2) withObject: nil afterDelay: 1.5f];
