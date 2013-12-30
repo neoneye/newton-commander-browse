@@ -7,11 +7,5 @@ target "Demo" do
 end
 
 target "NCWorker" do
-  #pod 'newton-commander-quark'
-  pod "newton-commander-browse", :path => "../newton-commander-browse.podspec"
-end
-
-target "NCWorkerLib" do
-  #pod 'newton-commander-quark'
   pod "newton-commander-browse", :path => "../newton-commander-browse.podspec"
 end
