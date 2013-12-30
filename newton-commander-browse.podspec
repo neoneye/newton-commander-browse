@@ -24,4 +24,5 @@ Pod::Spec.new do |s|
   s.resource_bundles = { 'NewtonCommanderBrowse' => "NewtonCommanderBrowseBundle/*" }
   s.public_header_files = 'Classes/*.h'
   s.dependency 'newton-commander-quark'
+  s.dependency 'objc-zmq'
 end
