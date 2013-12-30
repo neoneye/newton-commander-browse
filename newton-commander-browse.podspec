@@ -27,7 +27,6 @@ Pod::Spec.new do |s|
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
   
-  s.preserve_paths = 'NewtonCommanderBrowseSupport/*'
   s.public_header_files = 'Classes/osx/Library/*.h'
   s.frameworks = 'Cocoa'
   s.dependency 'newton-commander-quark'
