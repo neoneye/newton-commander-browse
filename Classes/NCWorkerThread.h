@@ -15,7 +15,7 @@
 
 -(id)initWithWorkerThread:(NCWorkerThread*)workerThread;
 
--(void)weAreRunning:(NSString*)name;
+-(void)weAreRunningOnPort:(NSNumber*)childPort;
 -(void)responseData:(NSData*)data;
 
 @end
@@ -35,7 +35,7 @@
 				uid:(NSString*)uid
 			  label:(NSString*)label;
 
--(void)callbackWeAreRunning:(NSString*)name;
+-(void)callbackWeAreRunningOnPort:(NSNumber*)childPort;
 -(void)callbackResponseData:(NSData*)data;
 
 -(void)addRequestToQueue:(NSData*)data;

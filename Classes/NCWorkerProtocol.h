@@ -17,7 +17,7 @@
 @protocol NCWorkerParentCallbackProtocol <NSObject>
 
 
--(oneway void)weAreRunning:(in bycopy NSString*)name;
+-(oneway void)weAreRunningOnPort:(in bycopy NSNumber*)childPort;
 
 
 -(oneway void)responseData:(in bycopy NSData*)data;

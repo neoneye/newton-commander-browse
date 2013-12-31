@@ -39,8 +39,8 @@
     return self;
 }
 
--(oneway void)weAreRunning:(in bycopy NSString*)name {
-	[m_worker_thread callbackWeAreRunning:name];
+-(oneway void)weAreRunningOnPort:(in bycopy NSNumber*)childPort {
+	[m_worker_thread callbackWeAreRunningOnPort:childPort];
 }
 
 -(oneway void)responseData:(in bycopy NSData*)data {
@@ -344,17 +344,21 @@
 	self.task = task;
 }
 
--(void)callbackWeAreRunning:(NSString*)name {
+-(void)callbackWeAreRunningOnPort:(NSNumber*)childPort {
 	// LOG_DEBUG(@"will connect to child %@", name);
+	if (childPort == nil) {
+		LOG_ERROR(@"child did not announce its port");
+		exit(-1);
+		return;
+	}
 	
-	NSInteger childPort = [name integerValue];
 	/*
 	 we are halfway through the handshake procedure:
 	 connection from child to parent is now up running.
 	 connection from parent to child is not yet established.
 	 */
 	
-	[self connectToChildWithPort:childPort];
+	[self connectToChildWithPort:[childPort integerValue]];
 	
     /*
 	 at this point we now have a estabilished a two-way connection using sockets

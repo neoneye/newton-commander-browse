@@ -133,9 +133,9 @@ float seconds_since_program_start() {
 	stop_watchdog();
 
 	// NSLog(@"%s STEP3 WILL CONTACT PARENT", _cmd);
-	LOG_DEBUG(@"main.will contact parent");
-	NSString *portString = [NSString stringWithFormat:@"%d", m_connection_port];
-	[m_parent weAreRunning:portString];
+	LOG_DEBUG(@"main.will announce child-port to our parent process");
+	NSNumber *childPort = [NSNumber numberWithInteger:m_connection_port];
+	[m_parent weAreRunningOnPort:childPort];
 
 	// NSLog(@"%s STEP4 WILL VALIDATE", _cmd);
 	
