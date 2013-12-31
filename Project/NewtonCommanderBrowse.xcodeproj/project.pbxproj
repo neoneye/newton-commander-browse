@@ -20,7 +20,6 @@
 		42D46017186F865600574C87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D46015186F865600574C87 /* AppDelegate.m */; };
 		42D4601F186F867000574C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D46019186F867000574C87 /* InfoPlist.strings */; };
 		42D46020186F867000574C87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D4601B186F867000574C87 /* MainMenu.xib */; };
-		42D46021186F867000574C87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42D4601D186F867000574C87 /* Info.plist */; };
 		42D46022186F867000574C87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4601E186F867000574C87 /* main.m */; };
 		42E0E48511F1245000029764 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E0E48411F1245000029764 /* CoreServices.framework */; };
 		42F68FBC1872181600BFA489 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429DC71111C535490028CDEC /* Cocoa.framework */; };
@@ -287,7 +286,6 @@
 			files = (
 				42D4601F186F867000574C87 /* InfoPlist.strings in Resources */,
 				42D46020186F867000574C87 /* MainMenu.xib in Resources */,
-				42D46021186F867000574C87 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
