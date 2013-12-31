@@ -87,7 +87,7 @@ float seconds_since_program_start() {
 @interface Main2 : Main <NCWorkerChildCallbackProtocol, NCWorkerPluginDelegate> {
 	NSConnection* m_connection;
 	int m_connection_port;
-	NSString* m_label;
+	NSString* m_identifier;
 	id <NCWorkerParentCallbackProtocol> m_parent;
 	BOOL m_connection_established;
 	
@@ -96,17 +96,17 @@ float seconds_since_program_start() {
 	int m_parent_port_number;
 }
 
--(id)initWithLabel:(NSString*)label parentPortNumber:(int)parentPortNumber;
+-(id)initWithIdentifier:(NSString*)identifier parentPortNumber:(int)parentPortNumber;
 -(void)initConnection;
 -(void)connectToParent;
 
 @end
 
 @implementation Main2
--(id)initWithLabel:(NSString*)label parentPortNumber:(int)parentPortNumber {
+-(id)initWithIdentifier:(NSString*)identifier parentPortNumber:(int)parentPortNumber {
 	self = [super init];
     if(self) {
-		m_label = [label copy];
+		m_identifier = [identifier copy];
 		m_parent_port_number = parentPortNumber;
 
 		m_connection = nil;
@@ -185,7 +185,7 @@ float seconds_since_program_start() {
 
 -(void)dieIfHandshakeFailed {
 	if(m_connection_established) {
-		LOG_DEBUG(@"connection has been established %@ OK", m_label);
+		LOG_DEBUG(@"connection has been established %@ OK", m_identifier);
 	} else {
 		LOG_ERROR(@"main.handshake never took place\nwill terminate self: %@", self);
 		[self stop];
@@ -231,7 +231,7 @@ float seconds_since_program_start() {
 
 int main (int argc, const char * argv[]) {
 	if(argc <= 1) {
-		printf("usage: NCWorker uid label parent child\n");
+		printf("usage: identifier parent_port run_as_uid\n");
 		return EXIT_FAILURE;
 	}
 
@@ -245,15 +245,23 @@ int main (int argc, const char * argv[]) {
 
 		/*
 		argv[0] = programname
-		argv[1] = label, description of our purpose (string)
+		argv[1] = identifier, unique string so that we can see what TAB in the UI we belong to (string)
 		argv[2] = parent-port-number, The socket we connect to (integer)
 		argv[3] (optional) = try run as uid (integer)
 		*/
 		if((argc < 3) || (argc > 4)) {
-			LOG_ERROR(@"ERROR: wrong number of arguments. There must be given 2 arguments and a 3th optional argument: label parent_port (uid)");
+			LOG_ERROR(@"ERROR: wrong number of arguments. There must be given 2 arguments and a 3th optional argument: identifier parent_port (uid)");
 			return EXIT_FAILURE;
 		}
 
+		const char* identifier = argv[1];
+			
+		int parent_port_number = strtol(argv[2], NULL, 10);
+		if((parent_port_number == 0) && (errno == EINVAL)) {
+			LOG_ERROR(@"ERROR: interpreting argument[2]. The value must be a signed integer.");
+			return EXIT_FAILURE;
+		}
+			
 		// parse integer if an UID is provided
 		int run_as_uid = 0;
 		BOOL should_switch_user = NO;
@@ -266,28 +274,20 @@ int main (int argc, const char * argv[]) {
 			should_switch_user = YES;
 		}
 		
-		const char* label = argv[1];
-
-		int parent_port_number = strtol(argv[2], NULL, 10);
-		if((parent_port_number == 0) && (errno == EINVAL)) {
-			LOG_ERROR(@"ERROR: interpreting argument[2]. The value must be a signed integer.");
-			return EXIT_FAILURE;
-		}
-			
 		{
 			char buffer[500];
 			snprintf(
 				buffer, 
 				500, 
 				"arg[1]     run_as_uid: %i\n"
-				"arg[2]          label: \"%-20s\"\n"
-				"arg[3]           port: %i\n"
+				"arg[2]     identifier: \"%-20s\"\n"
+				"arg[3]    parent_port: %i\n"
 				"           parent pid: %i\n"
 				"                  pid: %i\n"
 				" real / effective uid: %i / %i\n"
 				" real / effective gid: %i / %i\n",
 				run_as_uid, 
-				label,
+				identifier,
 				parent_port_number,
 				getppid(),
 				getpid(),
@@ -344,8 +344,8 @@ int main (int argc, const char * argv[]) {
 
 		// raise_test_exception();
 
-		NSString* s0 = [NSString stringWithUTF8String:label];
-		Main* main = [[Main2 alloc] initWithLabel:s0 parentPortNumber:parent_port_number];
+		NSString* s0 = [NSString stringWithUTF8String:identifier];
+		Main* main = [[Main2 alloc] initWithIdentifier:s0 parentPortNumber:parent_port_number];
 		[main performSelector: @selector(didEnterRunloop)
 		           withObject: nil
 		           afterDelay: 0];
