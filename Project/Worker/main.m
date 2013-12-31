@@ -86,6 +86,7 @@ float seconds_since_program_start() {
 
 @interface Main2 : Main <NCWorkerChildCallbackProtocol, NCWorkerPluginDelegate> {
 	NSConnection* m_connection;
+	int m_connection_port;
 	NSString* m_label;
 	NSString* m_child_name;
 	NSString* m_parent_name;
@@ -93,19 +94,22 @@ float seconds_since_program_start() {
 	BOOL m_connection_established;
 	
 	id <NCWorkerPlugin> m_plugin;
+	
+	int m_parent_port_number;
 }
 
--(id)initWithLabel:(NSString*)label childName:(NSString*)cname parentName:(NSString*)pname;
+-(id)initWithLabel:(NSString*)label parentPortNumber:(int)parentPortNumber childName:(NSString*)cname parentName:(NSString*)pname;
 -(void)initConnection;
 -(void)connectToParent;
 
 @end
 
 @implementation Main2
--(id)initWithLabel:(NSString*)label childName:(NSString*)cname parentName:(NSString*)pname {
+-(id)initWithLabel:(NSString*)label parentPortNumber:(int)parentPortNumber childName:(NSString*)cname parentName:(NSString*)pname {
 	self = [super init];
     if(self) {
 		m_label = [label copy];
+		m_parent_port_number = parentPortNumber;
 		m_parent_name = [pname copy];
 		m_child_name = [cname copy];
 
@@ -134,7 +138,8 @@ float seconds_since_program_start() {
 
 	// NSLog(@"%s STEP3 WILL CONTACT PARENT", _cmd);
 	LOG_DEBUG(@"main.will contact parent");
-	[m_parent weAreRunning:m_child_name];
+	NSString *portString = [NSString stringWithFormat:@"%d", m_connection_port];
+	[m_parent weAreRunning:portString];
 
 	// NSLog(@"%s STEP4 WILL VALIDATE", _cmd);
 	
@@ -165,8 +170,9 @@ float seconds_since_program_start() {
 	[con setRootObject:self]; // IDEA: use another seperate class as root object
 	m_connection = con;
 	
+	m_connection_port = [port nc_portNumber];
 	
-	NSLog(@"worker - port number %d", [port nc_portNumber]);
+	NSLog(@"worker - port number %d", m_connection_port);
 }
 
 -(void)connectToParent {
@@ -174,7 +180,7 @@ float seconds_since_program_start() {
 	NSString* name = m_parent_name;
 
 	// IPC between different user accounts is not possible with mach ports, thus we use sockets
-	NSPort* port = [[NSSocketPortNameServer sharedInstance] portForName:name host:@"*"];
+	NSSocketPort *port = [[NSSocketPort alloc] initRemoteWithTCPPort:m_parent_port_number host:nil];
 	NSConnection* connection = [NSConnection connectionWithReceivePort:nil sendPort:port];
 	
 	NSDistantObject* obj = [connection rootProxy]; 
@@ -251,11 +257,12 @@ int main (int argc, const char * argv[]) {
 		/*
 		argv[0] = programname
 		argv[1] = label, description of our purpose (string)
-		argv[2] = parent-name, connection name to get in touch with the frontend process (string)
-		argv[3] = child-name, our connection name, so parent can get in touch with us (string)
-		argv[4] (optional) = try run as uid (integer)
+		argv[2] = parent-port-number, The socket we connect to (integer)
+		argv[3] = parent-name, connection name to get in touch with the frontend process (string)
+		argv[4] = child-name, our connection name, so parent can get in touch with us (string)
+		argv[5] (optional) = try run as uid (integer)
 		*/
-		if((argc < 4) || (argc > 5)) {
+		if((argc < 5) || (argc > 6)) {
 			LOG_ERROR(@"ERROR: wrong number of arguments. There must be given 3 arguments and a 4th optional argument: label parent_name child_name (uid)");
 			return EXIT_FAILURE;
 		}
@@ -263,18 +270,25 @@ int main (int argc, const char * argv[]) {
 		// parse integer if an UID is provided
 		int run_as_uid = 0;
 		BOOL should_switch_user = NO;
-		if(argc == 5) {
-			run_as_uid = strtol(argv[4], NULL, 10);
+		if(argc == 6) {
+			run_as_uid = strtol(argv[5], NULL, 10);
 			if((run_as_uid == 0) && (errno == EINVAL)) {
-				LOG_ERROR(@"ERROR: interpreting argument[4]. The value must be a signed integer.");
+				LOG_ERROR(@"ERROR: interpreting argument[5]. The value must be a signed integer.");
 				return EXIT_FAILURE;
 			}
 			should_switch_user = YES;
 		}
 		
 		const char* label = argv[1];
-		const char* parent_name = argv[2];
-		const char* child_name = argv[3];
+
+		int parent_port_number = strtol(argv[2], NULL, 10);
+		if((parent_port_number == 0) && (errno == EINVAL)) {
+			LOG_ERROR(@"ERROR: interpreting argument[2]. The value must be a signed integer.");
+			return EXIT_FAILURE;
+		}
+			
+		const char* parent_name = argv[3];
+		const char* child_name = argv[4];
 
 		{
 			char buffer[500];
@@ -283,14 +297,16 @@ int main (int argc, const char * argv[]) {
 				500, 
 				"arg[1]     run_as_uid: %i\n"
 				"arg[2]          label: \"%-20s\"\n"
-				"arg[3]    parent name: \"%-20s\"\n"
-				"arg[4]     child name: \"%-20s\"\n"
+				"arg[3]           port: %i\n"
+				"arg[4]    parent name: \"%-20s\"\n"
+				"arg[5]     child name: \"%-20s\"\n"
 				"           parent pid: %i\n"
 				"                  pid: %i\n"
 				" real / effective uid: %i / %i\n"
 				" real / effective gid: %i / %i\n",
 				run_as_uid, 
-				label,     
+				label,
+				parent_port_number,
 				parent_name,
 				child_name,
 				getppid(),
@@ -351,7 +367,7 @@ int main (int argc, const char * argv[]) {
 		NSString* s0 = [NSString stringWithUTF8String:label];
 		NSString* s1 = [NSString stringWithUTF8String:child_name];
 		NSString* s2 = [NSString stringWithUTF8String:parent_name];
-		Main* main = [[Main2 alloc] initWithLabel:s0 childName:s1 parentName:s2];
+		Main* main = [[Main2 alloc] initWithLabel:s0 parentPortNumber:parent_port_number childName:s1 parentName:s2];
 		[main performSelector: @selector(didEnterRunloop)
 		           withObject: nil
 		           afterDelay: 0];

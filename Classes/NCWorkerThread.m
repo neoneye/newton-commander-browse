@@ -67,10 +67,11 @@
 	NSTask* m_task;
 }
 
-@property(nonatomic, strong) NSConnection* connection;
-@property(nonatomic, strong) NCWorkerConnection *workerConnection;
-@property(nonatomic, strong) NSTask* task;
-@property(nonatomic, strong) NSString* uid;
+@property (nonatomic, strong) NSConnection* connection;
+@property (nonatomic, assign) int connectionPort;
+@property (nonatomic, strong) NCWorkerConnection *workerConnection;
+@property (nonatomic, strong) NSTask* task;
+@property (nonatomic, strong) NSString* uid;
 
 @end
 
@@ -184,8 +185,9 @@
 	[con setReplyTimeout:1.0];
 	
 	self.connection = con;
+	self.connectionPort = [port nc_portNumber];
 	
-	NSLog(@"parent - port number %d", [port nc_portNumber]);
+	NSLog(@"parent - port number %d", self.connectionPort);
 }
 
 -(void)startTask {
@@ -311,6 +313,7 @@
 	NSString* path = m_path;
 	NSString* uid = m_uid;
 	NSString* label = m_label;
+	NSString* parentPortNumber = [NSString stringWithFormat:@"%d", self.connectionPort];
 	NSString* parent_name = m_parent_name;
 	NSString* child_name = m_child_name;
 	NSString* cwd = m_cwd;
@@ -324,6 +327,7 @@
 	
 	NSArray* args = [NSArray arrayWithObjects:
 					 label,
+					 parentPortNumber,
 					 parent_name,
 					 child_name,
 					 uid,
@@ -367,13 +371,15 @@
 
 -(void)callbackWeAreRunning:(NSString*)name {
 	// LOG_DEBUG(@"will connect to child %@", name);
+	
+	NSInteger childPort = [name integerValue];
 	/*
 	 we are halfway through the handshake procedure:
 	 connection from child to parent is now up running.
 	 connection from parent to child is not yet established.
 	 */
 	
-	[self connectToChild];
+	[self connectToChildWithPort:childPort];
 	
     /*
 	 at this point we now have a estabilished a two-way connection using sockets
@@ -385,11 +391,11 @@
 	           afterDelay: 0.f];
 }
 
--(void)connectToChild {
+-(void)connectToChildWithPort:(NSInteger)childPort {
 	NSString* name = m_child_name;
 	
 	// IPC between different user accounts is not possible with mach ports, thus we use sockets
-	NSPort* port = [[NSSocketPortNameServer sharedInstance] portForName:name host:@"*"];
+	NSSocketPort *port = [[NSSocketPort alloc] initRemoteWithTCPPort:childPort host:nil];
 	NSConnection* connection = [NSConnection connectionWithReceivePort:nil sendPort:port];
 	
 	NSDistantObject* obj = [connection rootProxy];
