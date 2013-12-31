@@ -47,15 +47,6 @@
 	return [self initWithController:controller pathToWorker:[NCWorker defaultPathToWorker]];
 }
 
--(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label {
-	return [self initWithController:controller];
-}
-
--(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker {
-	return [self initWithController:controller pathToWorker:pathToWorker];
-}
-
-
 +(NSString*)defaultPathToWorker {
 	NSString *bundlePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"NewtonCommanderBrowse.bundle"];
 	NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];

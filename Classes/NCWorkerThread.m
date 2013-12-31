@@ -144,7 +144,7 @@
 	self.connection = con;
 	self.connectionPort = [port nc_portNumber];
 	
-	NSLog(@"parent - port number %d", self.connectionPort);
+	LOG_DEBUG(@"parent - port number %d", self.connectionPort);
 }
 
 -(void)startTask {

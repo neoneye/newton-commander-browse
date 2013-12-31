@@ -22,14 +22,6 @@
 -(id)initWithController:(id<NCWorkerController>)controller;
 
 
-// deprecated
--(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label;
-
-// deprecated
--(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker;
-
-
-
 +(NSString*)defaultPathToWorker;
 
 -(void)setUid:(int)uid;

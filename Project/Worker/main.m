@@ -164,7 +164,7 @@ float seconds_since_program_start() {
 	
 	m_connection_port = [port nc_portNumber];
 	
-	NSLog(@"worker - port number %d", m_connection_port);
+	LOG_DEBUG(@"worker - port number %d", m_connection_port);
 }
 
 -(void)connectToParent {
