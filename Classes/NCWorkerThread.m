@@ -6,11 +6,9 @@
 #import "NCWorkerThread.h"
 #import "NCLog.h"
 #include <spawn.h>
-#import "NCWorkerConnection.h"
 #import "NSSocketPort+ObtainPortNumber.h"
 
 //#define USE_POSIX_SPAWN
-//#define USE_ZEROMQ
 
 
 @interface NSMutableArray (ShiftExtension)
@@ -67,7 +65,6 @@
 
 @property (nonatomic, strong) NSConnection* connection;
 @property (nonatomic, assign) int connectionPort;
-@property (nonatomic, strong) NCWorkerConnection *workerConnection;
 @property (nonatomic, strong) NSTask* task;
 @property (nonatomic, strong) NSString* uid;
 
@@ -133,28 +130,6 @@
 }
 
 -(void)createConnection {
-#ifdef USE_ZEROMQ
-	[self createConnectionWithZeroMQ];
-#else
-	[self createConnectionWithDistributedObjects];
-#endif
-}
-
--(void)createConnectionWithZeroMQ {
-	NSAssert(_workerConnection == nil, @"_zmqContext must not already be initialized");
-	
-	NCWorkerConnectionDidReceiveDataBlock didReceiveDataBlock = ^(NSData* data) {
-		NSLog(@"yay");
-		sleep(1);
-	};
-
-	
-	NCWorkerConnection *connection = [[NCWorkerConnection alloc] initWithDidReceiveDataBlock:didReceiveDataBlock];
-	self.workerConnection = connection;
-	[connection start];
-}
-
--(void)createConnectionWithDistributedObjects {
 	NSAssert(m_connection == nil, @"m_connection must not already be initialized");
 	
 	id root_object = m_callback;

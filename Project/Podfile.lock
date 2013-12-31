@@ -1,9 +1,7 @@
 PODS:
   - newton-commander-browse (0.1.12):
     - newton-commander-quark
-    - objc-zmq
   - newton-commander-quark (0.1.4)
-  - objc-zmq (0.1.0)
 
 DEPENDENCIES:
   - newton-commander-browse (from `../newton-commander-browse.podspec`)
@@ -13,8 +11,7 @@ EXTERNAL SOURCES:
     :path: ../newton-commander-browse.podspec
 
 SPEC CHECKSUMS:
-  newton-commander-browse: 07a4566d9742326a7ec494058dc0fcb4119ea307
+  newton-commander-browse: f48cef3260c635a556e0a76ad7f8a09d74e0b40b
   newton-commander-quark: 39899165bb7edd1383d903ac5e2b9f4e75948417
-  objc-zmq: 355ff86aa9ee72c3021f01828d98bca4ea4013f2
 
 COCOAPODS: 0.29.0
