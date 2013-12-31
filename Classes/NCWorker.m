@@ -89,20 +89,12 @@
 	// uid_str = @"0";   // user: root
 	// uid_str = @"";    // ignore user
 
-	NSString* path = m_path_to_worker;
-	// TODO: use worker label in cname and pname's to distinguish between workers
-	NSString* cname = [NSString stringWithFormat:@"child_%@", m_identifier];
-	NSString* pname = [NSString stringWithFormat:@"parent_%@", m_identifier];
-
-	
-	m_thread = [[NCWorkerThread alloc] 
+	m_thread = [[NCWorkerThread alloc]
 		initWithWorker:self 
 		controller:m_controller
-		path:path
+		path:m_path_to_worker
 		uid:uid_str
 		label:m_label
-		childName:cname
-		parentName:pname
 	];
 	[m_thread setName:@"WorkerThread"];
 	[m_thread start];

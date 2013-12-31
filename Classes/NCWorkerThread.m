@@ -59,8 +59,6 @@
 	NSString* m_path;
 	NSString* m_uid;
 	NSString* m_label;
-	NSString* m_child_name;
-	NSString* m_parent_name;
 	NSString* m_cwd;
 	BOOL m_connection_established;
 	NSMutableArray* m_request_queue;
@@ -86,8 +84,6 @@
 			   path:(NSString*)path
 				uid:(NSString*)uid
 			  label:(NSString*)label
-		  childName:(NSString*)cname
-		 parentName:(NSString*)pname
 {
     self = [super init];
     if(self != nil) {
@@ -97,8 +93,6 @@
 		m_cwd = [m_path stringByDeletingLastPathComponent];
 		m_uid = [uid copy];
 		m_label = [label copy];
-		m_parent_name = [pname copy];
-		m_child_name = [cname copy];
 		m_callback = [[NCWorkerCallback alloc] initWithWorkerThread:self];
 		m_connection = nil;
 		m_distant_object = nil;
@@ -111,8 +105,6 @@
 		NSAssert(m_path, @"must be initialized");
 		NSAssert(m_uid, @"must be initialized");
 		NSAssert(m_label, @"must be initialized");
-		NSAssert(m_parent_name, @"must be initialized");
-		NSAssert(m_child_name, @"must be initialized");
 		NSAssert(m_request_queue, @"must be initialized");
 		NSAssert(m_callback, @"must be initialized");
     }
@@ -166,15 +158,10 @@
 	NSAssert(m_connection == nil, @"m_connection must not already be initialized");
 	
 	id root_object = m_callback;
-	NSString* parent_name = m_parent_name;
 	
 	// IPC between different user accounts is not possible with mach ports, thus we use sockets
 	NSSocketPort* port = [[NSSocketPort alloc] init];
 	NSConnection* con = [NSConnection connectionWithReceivePort:port sendPort:nil];
-	if([[NSSocketPortNameServer sharedInstance] registerPort:port name:parent_name] == NO) {
-		LOG_ERROR(@"ERROR: In parent.. registerName was unsuccessful. connection_name=%@\nTERMINATE: %@", parent_name, self);
-		[NSApp terminate:self];
-	}
 	[con setRootObject:root_object];
 	
 	[con addRequestMode:NSEventTrackingRunLoopMode];
@@ -204,21 +191,15 @@
 	NSString* path = m_path;
 	NSString* uid = m_uid;
 	NSString* label = m_label;
-	NSString* parent_name = m_parent_name;
-	NSString* child_name = m_child_name;
 	NSString* cwd = m_cwd;
 	
 	NSAssert(path, @"path must be initialized");
 	NSAssert(uid, @"uid must be initialized");
 	NSAssert(label, @"label must be initialized");
-	NSAssert(parent_name, @"parent_name must be initialized");
-	NSAssert(child_name, @"child_name must be initialized");
 	NSAssert(cwd, @"cwd must be initialized");
 	
 	NSArray* args = [NSArray arrayWithObjects:
 					 label,
-					 parent_name,
-					 child_name,
 					 uid,
 					 nil
 					 ];
@@ -314,22 +295,16 @@
 	NSString* uid = m_uid;
 	NSString* label = m_label;
 	NSString* parentPortNumber = [NSString stringWithFormat:@"%d", self.connectionPort];
-	NSString* parent_name = m_parent_name;
-	NSString* child_name = m_child_name;
 	NSString* cwd = m_cwd;
 	
 	NSAssert(path, @"path must be initialized");
 	NSAssert(uid, @"uid must be initialized");
 	NSAssert(label, @"label must be initialized");
-	NSAssert(parent_name, @"parent_name must be initialized");
-	NSAssert(child_name, @"child_name must be initialized");
 	NSAssert(cwd, @"cwd must be initialized");
 	
 	NSArray* args = [NSArray arrayWithObjects:
 					 label,
 					 parentPortNumber,
-					 parent_name,
-					 child_name,
 					 uid,
 					 nil
 					 ];
@@ -392,15 +367,13 @@
 }
 
 -(void)connectToChildWithPort:(NSInteger)childPort {
-	NSString* name = m_child_name;
-	
 	// IPC between different user accounts is not possible with mach ports, thus we use sockets
 	NSSocketPort *port = [[NSSocketPort alloc] initRemoteWithTCPPort:childPort host:nil];
 	NSConnection* connection = [NSConnection connectionWithReceivePort:nil sendPort:port];
 	
 	NSDistantObject* obj = [connection rootProxy];
 	if(obj == nil) {
-		LOG_ERROR(@"ERROR: could not connect to child: %@\nTERMINATE: %@", name, self);
+		LOG_ERROR(@"ERROR: could not connect to child with port %d\nTERMINATE: %@", childPort, self);
 		exit(-1);
 		return;
 	}
@@ -412,7 +385,7 @@
 	double t1 = CFAbsoluteTimeGetCurrent();
 	double elapsed = t1 - t0;
 	if(rc != 43) {
-		LOG_ERROR(@"ERROR: failed creating two-way connection. child: %@  elapsed: %.6f", name, elapsed);
+		LOG_ERROR(@"ERROR: failed creating two-way connection. child with port: %d  elapsed: %.6f", childPort, elapsed);
 		return;
 	}
 	LOG_INFO(@"Did handshake with child. elapsed: %.6f", elapsed);
@@ -492,11 +465,6 @@
 }
 
 -(void)shutdownConnection {
-	
-	if([[NSSocketPortNameServer sharedInstance] removePortForName:m_parent_name] == NO) {
-		LOG_ERROR(@"%s failed to remove port: %@", _cmd, m_parent_name);
-	}
-	
 	/*
 	 TODO: figure out what objects to invalidate
 	 */
