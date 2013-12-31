@@ -7,6 +7,7 @@
 #import "NCLog.h"
 #include <spawn.h>
 #import "NCWorkerConnection.h"
+#import "NSSocketPort+ObtainPortNumber.h"
 
 //#define USE_POSIX_SPAWN
 //#define USE_ZEROMQ
@@ -183,6 +184,8 @@
 	[con setReplyTimeout:1.0];
 	
 	self.connection = con;
+	
+	NSLog(@"parent - port number %d", [port nc_portNumber]);
 }
 
 -(void)startTask {

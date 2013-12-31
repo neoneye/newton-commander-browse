@@ -21,6 +21,7 @@ This watchdog could be specified via the commandline, e.g:  NewtonCommanderHelpe
 #import "NCWorkerProtocol.h"
 #import "NCWorkerPlugin.h"
 #import "NCWorkerPluginAdvanced.h"
+#import "NSSocketPort+ObtainPortNumber.h"
 
 #define INCLUDE_DEBUG_CODE
 
@@ -162,7 +163,10 @@ float seconds_since_program_start() {
 		[self stop];
 	}
 	[con setRootObject:self]; // IDEA: use another seperate class as root object
-	m_connection = con; 
+	m_connection = con;
+	
+	
+	NSLog(@"worker - port number %d", [port nc_portNumber]);
 }
 
 -(void)connectToParent {
