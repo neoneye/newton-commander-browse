@@ -26,14 +26,14 @@
 /*
  worker:      the class that owns us
  path:        path to the executable that this thread should run as sub-task
- label:       purpose of this worker
+ identifier:  unique identification of this TAB and its worker process
  uid:         the user-id that the task should run as (switch user ala sudo)
  */
 -(id)initWithWorker:(NCWorker*)worker
 		 controller:(id<NCWorkerController>)controller
 			   path:(NSString*)path
 				uid:(NSString*)uid
-			  label:(NSString*)label;
+		 identifier:(NSString*)identifier;
 
 -(void)callbackWeAreRunningOnPort:(NSNumber*)childPort;
 -(void)callbackResponseData:(NSData*)data;

@@ -53,7 +53,7 @@
 	NSDistantObject* m_distant_object;
 	NSString* m_path;
 	NSString* m_uid;
-	NSString* m_label;
+	NSString* m_identifier;
 	NSString* m_cwd;
 	BOOL m_connection_established;
 	NSMutableArray* m_request_queue;
@@ -77,7 +77,7 @@
 		 controller:(id<NCWorkerController>)controller
 			   path:(NSString*)path
 				uid:(NSString*)uid
-			  label:(NSString*)label
+		 identifier:(NSString*)identifier
 {
     self = [super init];
     if(self != nil) {
@@ -86,7 +86,7 @@
 		m_path = [path copy];
 		m_cwd = [m_path stringByDeletingLastPathComponent];
 		m_uid = [uid copy];
-		m_label = [label copy];
+		m_identifier = [identifier copy];
 		m_callback = [[NCWorkerCallback alloc] initWithWorkerThread:self];
 		m_connection = nil;
 		m_distant_object = nil;
@@ -98,7 +98,7 @@
 		NSAssert(m_controller, @"must be initialized");
 		NSAssert(m_path, @"must be initialized");
 		NSAssert(m_uid, @"must be initialized");
-		NSAssert(m_label, @"must be initialized");
+		NSAssert(m_identifier, @"must be initialized");
 		NSAssert(m_request_queue, @"must be initialized");
 		NSAssert(m_callback, @"must be initialized");
     }
@@ -111,7 +111,7 @@
 		[self performSelector:@selector(threadDidStart) withObject:nil afterDelay:0.f];
 		[[NSRunLoop currentRunLoop] run];
 		
-		LOG_DEBUG(@"NSRunLoop exited, terminating thread for label: %@", m_label);
+		LOG_DEBUG(@"NSRunLoop exited, terminating thread for identifier: %@", m_identifier);
 	}
 }
 
@@ -152,17 +152,17 @@
 	
 	NSString* path = m_path;
 	NSString* uid = m_uid;
-	NSString* label = m_label;
+	NSString* identifier = m_identifier;
 	NSString* parentPortNumber = [NSString stringWithFormat:@"%d", self.connectionPort];
 	NSString* cwd = m_cwd;
 	
 	NSAssert(path, @"path must be initialized");
 	NSAssert(uid, @"uid must be initialized");
-	NSAssert(label, @"label must be initialized");
+	NSAssert(identifier, @"identifier must be initialized");
 	NSAssert(cwd, @"cwd must be initialized");
 	
 	NSArray* args = [NSArray arrayWithObjects:
-					 label,
+					 identifier,
 					 parentPortNumber,
 					 uid,
 					 nil

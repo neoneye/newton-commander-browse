@@ -18,7 +18,6 @@
 
 @interface NCWorker () {
 	id m_controller;
-	NSString* m_label;
 	NSString* m_path_to_worker;
 	NCWorkerThread* m_thread;
 	NSString* m_identifier;
@@ -31,28 +30,34 @@
 
 @implementation NCWorker
 
--(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker {
+-(id)initWithController:(id<NCWorkerController>)controller pathToWorker:(NSString*)pathToWorker {
     self = [super init];
     if(self != nil) {
 		m_controller = controller;
-		m_label = [label copy];
 		m_path_to_worker = [pathToWorker copy];
 		m_thread = nil;
 		m_identifier = [NCWorker createIdentifier];
 		[self resetUid];
 		
 		NSAssert(m_controller, @"must be initialized");
-		NSAssert(m_label, @"must be initialized");
 		NSAssert(m_path_to_worker, @"must be initialized");
 		NSAssert(m_identifier, @"must be initialized");
     }
     return self;
 }
 
+-(id)initWithController:(id<NCWorkerController>)controller {
+	return [self initWithController:controller pathToWorker:[NCWorker defaultPathToWorker]];
+}
 
 -(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label {
-	return [self initWithController:controller label:label pathToWorker:[NCWorker defaultPathToWorker]];
+	return [self initWithController:controller];
 }
+
+-(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker {
+	return [self initWithController:controller pathToWorker:pathToWorker];
+}
+
 
 +(NSString*)defaultPathToWorker {
 	NSString *bundlePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"NewtonCommanderBrowse.bundle"];
@@ -67,7 +72,7 @@
 	static NSUInteger tag_counter = 0;                          
 	NSUInteger pid = getpid();
 	NSUInteger tag = tag_counter++; // autoincrement it
-	return [NSString stringWithFormat:@"%lu_%lu", 
+	return [NSString stringWithFormat:@"browse_worker_%lu_%lu",
 		(unsigned long)pid, (unsigned long)tag]; 
 }
 
@@ -94,7 +99,7 @@
 		controller:m_controller
 		path:m_path_to_worker
 		uid:uid_str
-		label:m_label
+		identifier:m_identifier
 	];
 	[m_thread setName:@"WorkerThread"];
 	[m_thread start];

@@ -17,9 +17,18 @@
 
 @interface NCWorker : NSObject
 
+
+-(id)initWithController:(id<NCWorkerController>)controller pathToWorker:(NSString*)pathToWorker;
+-(id)initWithController:(id<NCWorkerController>)controller;
+
+
+// deprecated
 -(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label;
 
+// deprecated
 -(id)initWithController:(id<NCWorkerController>)controller label:(NSString*)label pathToWorker:(NSString*)pathToWorker;
+
+
 
 +(NSString*)defaultPathToWorker;
 

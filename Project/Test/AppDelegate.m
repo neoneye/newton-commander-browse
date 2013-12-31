@@ -29,7 +29,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-	self.worker = [[NCWorker alloc] initWithController:self label:@"left_panel" pathToWorker:[AppDelegate pathToWorker]];
+	self.worker = [[NCWorker alloc] initWithController:self pathToWorker:[AppDelegate pathToWorker]];
 	
 	[self request1];
 	[self performSelector: @selector(request2) withObject: nil afterDelay: 1.5f];
