@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "newton-commander-browse"
-  s.version      = "0.1.16"
+  s.version      = "0.1.17"
   s.summary      = "Worker process used by Newton Commander for each open panel."
   s.description  = <<-DESC
     The child process that runs for each open tab within Newton Commander.
