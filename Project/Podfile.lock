@@ -1,7 +1,7 @@
 PODS:
-  - newton-commander-browse (0.1.17):
+  - newton-commander-browse (0.1.18):
     - newton-commander-quark
-  - newton-commander-quark (0.1.8)
+  - newton-commander-quark (0.1.9)
 
 DEPENDENCIES:
   - newton-commander-browse (from `../newton-commander-browse.podspec`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../newton-commander-browse.podspec
 
 SPEC CHECKSUMS:
-  newton-commander-browse: edf73d8feb611dff1722682c0d6a9e12cbc9807d
-  newton-commander-quark: c818f4a6e0fcd30075a94426e72c685f0deb2eb3
+  newton-commander-browse: b51124f1f1eeaba20a7164fca55867694fdf6245
+  newton-commander-quark: 220ffd519e551faa28fabdcc6f5f60f033d55781
 
 COCOAPODS: 0.29.0
