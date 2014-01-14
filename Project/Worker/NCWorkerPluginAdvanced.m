@@ -609,8 +609,7 @@ This function only makes sense when you consider FTP mounted volumes.
 		NSString* path = [wdir stringByAppendingPathComponent:name];
 
 		// determine if it's a file or an alias
-		int alias_type = -1;
-		NSString* target_path = [ncfm resolveAlias:path mode:&alias_type];
+		NSString* target_path = [ncfm resolveAlias:path];
 		if(!target_path) {
 			[item setItemType:kNCItemTypeFile];
 			continue;
